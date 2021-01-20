@@ -1,0 +1,18 @@
+body {
+  background-color: #003049;
+}
+h1 {
+  color: aqua;
+  font-family: "Courier New", Courier, monospace;
+}
+div {
+  display: inline-block;
+  text-align: center;
+}
+span {
+  color: yellow;
+}
+
+img {
+  display: block;
+}
