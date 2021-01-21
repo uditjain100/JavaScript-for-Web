@@ -16,3 +16,8 @@ hab.addEventListener("mousedown", () => {
 hab.addEventListener("mouseup", () => {
   console.log("Good bye then :( ");
 });
+
+window.addEventListener("keydown", function (event) {
+  console.log(event.code);
+  console.log(event.key);
+});
