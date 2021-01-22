@@ -1,0 +1,12 @@
+body {
+  background-color: darkorange;
+}
+
+.mainbody {
+  background-color: deepskyblue;
+  width: 200px;
+  display: flexbox;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+}

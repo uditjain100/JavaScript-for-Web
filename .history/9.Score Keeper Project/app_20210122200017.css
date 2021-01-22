@@ -1,0 +1,25 @@
+body {
+  background-color: darkorange;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 90vh;
+}
+
+img {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  border: 0.5px #003049 solid;
+  border-radius: 8%;
+}
+
+#mainbody {
+  background-color: deepskyblue;
+  border: 0.5px #003049 solid;
+  border-radius: 3%;
+  width: 600px;
+}

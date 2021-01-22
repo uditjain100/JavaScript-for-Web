@@ -1,0 +1,32 @@
+body {
+  background-color: darkorange;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 90vh;
+}
+
+img {
+  display: flex;
+  justify-content: center;
+  margin-top: 2px;
+  border: 0.5px #003049 solid;
+  border-radius: 3%;
+}
+
+#mainbody {
+  background-color: deepskyblue;
+  border: 0.5px #003049 solid;
+  border-radius: 3%;
+  width: 600px;
+}
+
+#heading {
+  text-align: center;
+  color: black;
+  font-weight: 500;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}

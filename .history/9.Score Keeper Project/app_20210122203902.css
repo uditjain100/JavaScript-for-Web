@@ -1,0 +1,35 @@
+body {
+  background-color: #003049;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 90vh;
+}
+
+img {
+  display: flex;
+  justify-content: center;
+  margin-top: 2px;
+  border: 0.5px #003049 solid;
+  border-radius: 3%;
+}
+
+#mainbody {
+  background-color: aqua;
+  border: 0.5px #003049 solid;
+  border-radius: 3%;
+  width: 400px;
+}
+
+#heading {
+  margin: 3px;
+  padding: 1px;
+  text-decoration: underline;
+  text-align: center;
+  color: black;
+  font-weight: 500;
+  font-family: monospace;
+}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Score Keeper</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+      crossorigin="anonymous"
+    />
+    link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="app.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div id="mainbody" class="main" style="height: 450px">
+        <img
+          src="image.png"
+          alt="Table_Tennis"
+          class="img-fluid mx-auto"
+          style="width: 99%; height: 50%"
+        />
+
+        <h6 id="heading" class="diaply-10">Ping Pong Score Keeper</h6>
+
+        <div id="scores" class="scores m-2 p-1 mx-auto">
+          <span id="score" class="score">SCORES : 0/0</span>
+        </div>
+
+        <h6 id="instruction">Use the BUTTONS below to keep Scores</h6>
+
+        <div id="maxScores" class="row">
+          <div class="col-6">
+            <h6 id="max_score" class="display-10 fw-4">Maximum Score :</h6>
+          </div>
+          <div id="select_02" class="col-2">
+            <select
+              class="form-control btn-secondary"
+              name="max-score"
+              id="max-score"
+            >
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="row m-2">
+          <div class="col-4 bg-primary">
+            <button class="btn">Player 1</button>
+          </div>
+          <div class="col-4 bg-success">
+            <button class="btn">Player 2</button>
+          </div>
+          <div class="col-4 bg-danger">
+            <button class="btn">Resart</button>
+          </div>
+        </div>
+
+        <!-- ********************* -->
+      </div>
+    </div>
+  </body>
+</html>

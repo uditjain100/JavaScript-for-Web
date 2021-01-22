@@ -1,0 +1,46 @@
+body {
+  background-color: #003049;
+  font-family: "Montserrat";
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 90vh;
+}
+
+img {
+  display: flex;
+  justify-content: center;
+  margin-top: 2px;
+  border: 0.5px #003049 solid;
+  border-radius: 3%;
+}
+
+#mainbody {
+  background-color: aqua;
+  border: 0.5px #003049 solid;
+  border-radius: 3%;
+  width: 400px;
+}
+
+#heading {
+  margin: 3px;
+  padding: 1px;
+  text-align: center;
+  color: darkblue;
+  font-weight: 900;
+  font-size: large;
+  font-family: "Montserrat";
+}
+
+#scores {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#score {
+  text-align: center;
+  font-size: 35px;
+}
