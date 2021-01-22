@@ -24,7 +24,7 @@ p1_btn.addEventListener("click", () => {
 });
 
 p2_btn.addEventListener("click", () => {
-  if (j + 1 === max) {
+  if (i + 1 === max) {
     p2_score.innerText = ++j;
     p2_score.style.color = "Green";
     p1_score.style.color = "Red";

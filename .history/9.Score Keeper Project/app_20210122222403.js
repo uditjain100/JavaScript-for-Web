@@ -13,26 +13,11 @@ p1_btn.addEventListener("click", () => {
   if (i + 1 === max) {
     p1_score.innerText = ++i;
     p1_score.style.color = "Green";
-    p2_score.style.color = "Red";
     i = 0;
     alert("Restart Game :)");
   } else {
     console.log("Heyyyyyyyyyyyy !!");
     p1_score.style.color = "Black";
     p1_score.innerText = ++i;
-  }
-});
-
-p2_btn.addEventListener("click", () => {
-  if (j + 1 === max) {
-    p2_score.innerText = ++j;
-    p2_score.style.color = "Green";
-    p1_score.style.color = "Red";
-    j = 0;
-    alert("Restart Game :)");
-  } else {
-    console.log("Heyyyyyyyyyyyy !!");
-    p2_score.style.color = "Black";
-    p2_score.innerText = ++j;
   }
 });
