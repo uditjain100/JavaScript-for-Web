@@ -49,6 +49,6 @@ tweet_btn.addEventListener("click", (e) => {
   }
 });
 
-list.addEventListener("click", (e) => {
-  if (e.target.nodeName === "BUTTON") e.target.remove();
+allrows.addEventListener("click", (e) => {
+  console.log(e);
 });

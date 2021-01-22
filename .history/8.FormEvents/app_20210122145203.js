@@ -2,8 +2,6 @@ var list = document.querySelector("#tweets");
 var tweet_btn = document.querySelector("#tweet_btn");
 var username_input = document.querySelector("#username");
 var tweet_input = document.querySelector("#tweet");
-var allrows = document.querySelectorAll("#tweet_list");
-var all_del_btns = document.querySelectorAll("#del_btn");
 
 function generateColor(item) {
   rand1 = Math.floor(Math.random() * 256);
@@ -13,12 +11,11 @@ function generateColor(item) {
   item.style.backgroundColor = "rgb(" + rand1 + "," + rand2 + "," + rand3 + ")";
 }
 
-tweet_btn.addEventListener("click", (e) => {
+tweet_btn.addEventListener("click", () => {
   if (username_input.value === "" || tweet_input.value === "")
     alert("Input Field is Empty :(");
   else {
     var newItem = document.createElement("div");
-    newItem.id = "tweet_list";
     newItem.className = "row";
     newItem.style.margin = "3px";
     newItem.style.padding = "3px";
@@ -49,6 +46,12 @@ tweet_btn.addEventListener("click", (e) => {
   }
 });
 
-list.addEventListener("click", (e) => {
-  if (e.target.nodeName === "BUTTON") e.target.remove();
-});
+val allrows  = document.querySelectorAll('.row');
+val all_del_btns  = document.querySelectorAll('#del_btn');
+
+for(var i = 0 ; i < allrows.length ; i++){
+    all_del_btns[i].addEventListener('click',() => {
+        allrows[i].remove();
+    });
+}
+    

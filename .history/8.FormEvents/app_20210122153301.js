@@ -50,5 +50,5 @@ tweet_btn.addEventListener("click", (e) => {
 });
 
 list.addEventListener("click", (e) => {
-  if (e.target.nodeName === "BUTTON") e.target.remove();
+  if (e.target.nodeName === "H3") e.target.remove();
 });

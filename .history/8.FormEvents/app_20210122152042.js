@@ -49,6 +49,11 @@ tweet_btn.addEventListener("click", (e) => {
   }
 });
 
-list.addEventListener("click", (e) => {
-  if (e.target.nodeName === "BUTTON") e.target.remove();
-});
+for (var row of allrows) {
+  //   var db = row.querySelector("#del_btn");
+  row.addEventListener("click", (e) => {
+    console.log(e);
+    e.target.remove();
+    // e.target == "DIV" && row.remove();
+  });
+}

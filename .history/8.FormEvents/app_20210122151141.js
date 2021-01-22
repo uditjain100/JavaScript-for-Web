@@ -13,7 +13,7 @@ function generateColor(item) {
   item.style.backgroundColor = "rgb(" + rand1 + "," + rand2 + "," + rand3 + ")";
 }
 
-tweet_btn.addEventListener("click", (e) => {
+tweet_btn.addEventListener("click", () => {
   if (username_input.value === "" || tweet_input.value === "")
     alert("Input Field is Empty :(");
   else {
@@ -46,9 +46,20 @@ tweet_btn.addEventListener("click", (e) => {
     list.append(newItem);
     username_input.value = "";
     tweet_input.value = "";
+    console.log(allrows);
   }
 });
 
-list.addEventListener("click", (e) => {
-  if (e.target.nodeName === "BUTTON") e.target.remove();
-});
+for (var row of allrows) {
+  //   var db = row.querySelector("#del_btn");
+  row.addEventListener("click", (e) => {
+    console.log(e);
+    // e.target == "DIV" && row.remove();
+  });
+}
+
+// for (var i = 0; i < allrows.length; i++) {
+//   all_del_btns[i].addEventListener("click", () => {
+//     allrows[i].remove();
+//   });
+// }

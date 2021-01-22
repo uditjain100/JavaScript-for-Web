@@ -2,8 +2,6 @@ var list = document.querySelector("#tweets");
 var tweet_btn = document.querySelector("#tweet_btn");
 var username_input = document.querySelector("#username");
 var tweet_input = document.querySelector("#tweet");
-var allrows = document.querySelectorAll("#tweet_list");
-var all_del_btns = document.querySelectorAll("#del_btn");
 
 function generateColor(item) {
   rand1 = Math.floor(Math.random() * 256);
@@ -13,25 +11,24 @@ function generateColor(item) {
   item.style.backgroundColor = "rgb(" + rand1 + "," + rand2 + "," + rand3 + ")";
 }
 
-tweet_btn.addEventListener("click", (e) => {
+tweet_btn.addEventListener("click", () => {
   if (username_input.value === "" || tweet_input.value === "")
     alert("Input Field is Empty :(");
   else {
     var newItem = document.createElement("div");
-    newItem.id = "tweet_list";
     newItem.className = "row";
+    newItem.style.textAlign = "center";
+    newItem.style.color = "white";
     newItem.style.margin = "3px";
     newItem.style.padding = "3px";
     generateColor(newItem);
 
     var newTweet = document.createElement("h3");
-    newTweet.style.textAlign = "center";
-    newTweet.style.color = "white";
-    newTweet.className = "col-11";
+    newTweet.className = "col-9";
     newTweet.innerText = username_input.value + "  :  " + tweet_input.value;
 
     var newbtn = document.createElement("button");
-    newbtn.className = "col-1";
+    newbtn.className = "col-2";
     newbtn.innerText = "X";
     newbtn.id = "del_btn";
     newbtn.style.borderRadius = "50%";
@@ -47,8 +44,4 @@ tweet_btn.addEventListener("click", (e) => {
     username_input.value = "";
     tweet_input.value = "";
   }
-});
-
-list.addEventListener("click", (e) => {
-  if (e.target.nodeName === "BUTTON") e.target.remove();
 });

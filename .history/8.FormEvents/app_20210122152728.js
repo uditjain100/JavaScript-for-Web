@@ -50,5 +50,6 @@ tweet_btn.addEventListener("click", (e) => {
 });
 
 list.addEventListener("click", (e) => {
-  if (e.target.nodeName === "BUTTON") e.target.remove();
+  console.log("Heyyyyyyyyyyyyy!!");
+  console.log(e);
 });

@@ -49,6 +49,22 @@ tweet_btn.addEventListener("click", (e) => {
   }
 });
 
-list.addEventListener("click", (e) => {
-  if (e.target.nodeName === "BUTTON") e.target.remove();
-});
+// for (var btn of all_del_btns)
+//   btn.addEventListener("click", (e) => {
+//     console.log(e);
+//   });
+
+for (var row of allrows) {
+  //   var db = row.querySelector("#del_btn");
+  row.addEventListener("click", (e) => {
+    console.log(e);
+    e.target.remove();
+    // e.target == "DIV" && row.remove();
+  });
+}
+
+// for (var i = 0; i < allrows.length; i++) {
+//   all_del_btns[i].addEventListener("click", () => {
+//     allrows[i].remove();
+//   });
+// }
