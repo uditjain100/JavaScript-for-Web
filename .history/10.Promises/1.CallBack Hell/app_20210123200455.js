@@ -3,7 +3,7 @@
 // thirdApproach();
 // fourthApproach();
 // promiseApproach();
-awaitApproach();
+asyncAndawaitApproach();
 
 // First Approach
 function firstApproach() {
@@ -83,7 +83,7 @@ function promiseApproach() {
     .then(() => delayedColorChange("red", 1000));
 }
 
-async function awaitApproach() {
+async function asyncAndawaitApproach() {
   function delayedColorChange(newColor, delay) {
     return new Promise((resolve, reject) => {
       setTimeout(() => {

@@ -1,5 +1,4 @@
 // Async function automatically returns promises
-work();
 
 var api =
   "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/";
@@ -14,11 +13,22 @@ async function pokemon(i) {
 }
 
 async function work() {
-  for (var i = 1; i < 899; i++) {
-    pokemon(i).then(() => {
-      console.log("Showingggggggggg...");
-    });
-  }
+  //   for (var i = 1; i < 873; i++) {
+  //     await pokemon(i).then(() => {
+  //       console.log("Showingggggggggg...");
+  //     });
+  //   }
+
+  await pokemon(1);
+  console.log("hi");
+  await pokemon(1);
+  console.log("hi");
+  await pokemon(1);
+  console.log("hi");
+  await pokemon(1);
+  console.log("hi");
+  await pokemon(1);
+  console.log("hi");
 }
 
 function newPokemon(i) {
@@ -31,3 +41,5 @@ function newPokemon(i) {
   pokemon.appendChild(newi);
   pokemon.appendChild(label);
 }
+
+work();

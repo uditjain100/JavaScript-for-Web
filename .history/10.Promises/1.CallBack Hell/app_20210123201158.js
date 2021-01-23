@@ -3,7 +3,8 @@
 // thirdApproach();
 // fourthApproach();
 // promiseApproach();
-awaitApproach();
+asyncApproach();
+// awaitApproach();
 
 // First Approach
 function firstApproach() {

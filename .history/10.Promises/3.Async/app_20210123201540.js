@@ -9,7 +9,7 @@ async function pokemon(i) {
   return new Promise((resolve, failure) => {
     setTimeout(() => {
       newPokemon(i);
-    }, 2000);
+    }, 500);
   });
 }
 

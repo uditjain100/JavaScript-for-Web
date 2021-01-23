@@ -9,13 +9,13 @@ async function pokemon(i) {
   return new Promise((resolve, failure) => {
     setTimeout(() => {
       newPokemon(i);
-    }, 2000);
+    }, 500);
   });
 }
 
 async function work() {
   for (var i = 1; i < 899; i++) {
-    pokemon(i).then(() => {
+    await pokemon(i).then(() => {
       console.log("Showingggggggggg...");
     });
   }
