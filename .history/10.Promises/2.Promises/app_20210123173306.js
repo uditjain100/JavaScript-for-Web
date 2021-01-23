@@ -32,7 +32,7 @@ function callbackWithoutPromises() {
   );
 }
 
-// callbackWithoutPromises();
+callbackWithoutPromises();
 
 // With Promises
 function fakeRequestPromise(url) {
@@ -49,42 +49,17 @@ function fakeRequestPromise(url) {
 }
 
 // With Promises
-function callbackWithPromises() {
-  fakeRequestPromise("books.com")
-    .then(() => {
-      console.log("Here is your fake Data 1");
-      fakeRequestPromise("books.com")
-        .then(() => {
-          console.log("Here is your fake Data 2");
-        })
-        .catch(() => {
-          console.log("Connection TimeOut !! in 2");
-        });
-    })
-    .catch(() => {
-      console.log("Connection TimeOut !! in 1");
-    });
-}
-
-// callbackWithPromises();
-
-function promisesMagic() {
-  fakeRequestPromise("books.com")
-    .then((msg) => {
-      console.log(msg + " 1");
-      return fakeRequestPromise("bools.com");
-    })
-    .then((msg) => {
-      console.log(msg + " 2");
-      return fakeRequestPromise("bools.com");
-    })
-    .then((msg) => {
-      console.log(msg + " 3");
-      return fakeRequestPromise("bools.com");
-    })
-    .catch((error) => {
-      console.log(error);
-    });
-}
-
-promisesMagic();
+fakeRequestPromise("books.com")
+  .then(() => {
+    console.log("Here is your fake Data 1");
+    fakeRequestPromise("books.com")
+      .then(() => {
+        console.log("Here is your fake Data 2");
+      })
+      .catch(() => {
+        console.log("Connection TimeOut !! in 2");
+      });
+  })
+  .catch(() => {
+    console.log("Connection TimeOut !! in 1");
+  });

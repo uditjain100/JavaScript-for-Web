@@ -66,25 +66,4 @@ function callbackWithPromises() {
     });
 }
 
-// callbackWithPromises();
-
-function promisesMagic() {
-  fakeRequestPromise("books.com")
-    .then((msg) => {
-      console.log(msg + " 1");
-      return fakeRequestPromise("bools.com");
-    })
-    .then((msg) => {
-      console.log(msg + " 2");
-      return fakeRequestPromise("bools.com");
-    })
-    .then((msg) => {
-      console.log(msg + " 3");
-      return fakeRequestPromise("bools.com");
-    })
-    .catch((error) => {
-      console.log(error);
-    });
-}
-
-promisesMagic();
+callbackWithPromises();

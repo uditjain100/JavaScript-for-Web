@@ -68,23 +68,20 @@ function callbackWithPromises() {
 
 // callbackWithPromises();
 
-function promisesMagic() {
+function promisesMagc() {
   fakeRequestPromise("books.com")
-    .then((msg) => {
-      console.log(msg + " 1");
+    .then(() => {
+      console.log("Here is your fake Data 1");
       return fakeRequestPromise("bools.com");
     })
-    .then((msg) => {
-      console.log(msg + " 2");
+    .then(() => {
+      console.log("Here is your fake Data 2");
       return fakeRequestPromise("bools.com");
     })
-    .then((msg) => {
-      console.log(msg + " 3");
-      return fakeRequestPromise("bools.com");
+    .then(() => {
+      console.log("Here is your fake Data 1");
     })
-    .catch((error) => {
-      console.log(error);
+    .catch(() => {
+      console.log("Connection TimeOut !!");
     });
 }
-
-promisesMagic();

@@ -75,15 +75,15 @@ function promisesMagic() {
       return fakeRequestPromise("bools.com");
     })
     .then((msg) => {
-      console.log(msg + " 2");
+      console.log(msg + " 1");
       return fakeRequestPromise("bools.com");
     })
     .then((msg) => {
-      console.log(msg + " 3");
+      console.log(msg + " 1");
       return fakeRequestPromise("bools.com");
     })
-    .catch((error) => {
-      console.log(error);
+    .catch(() => {
+      console.log("Connection TimeOut !!");
     });
 }
 
