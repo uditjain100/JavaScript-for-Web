@@ -25,8 +25,6 @@ p1_btn.addEventListener("click", () => {
       p1_score.innerText = ++i;
       p1_score.style.color = "Green";
       p2_score.style.color = "Red";
-      p1_btn.disabled = true;
-      p2_btn.disabled = true;
       i = 0;
       j = 0;
       isGameOyer = true;
@@ -44,8 +42,6 @@ p2_btn.addEventListener("click", () => {
       p2_score.innerText = ++j;
       p2_score.style.color = "Green";
       p1_score.style.color = "Red";
-      p1_btn.disabled = true;
-      p2_btn.disabled = true;
       i = 0;
       j = 0;
       isGameOyer = true;
@@ -67,6 +63,4 @@ function reset() {
   p2_score.innerText = j;
   p2_score.style.color = "Black";
   p1_score.style.color = "Black";
-  p1_btn.disabled = false;
-  p2_btn.disabled = false;
 }

@@ -53,9 +53,8 @@ img {
   border-bottom: 2px #003049 solid;
 }
 
-#max_score {
+#max_score #max_score_select {
   padding: 2px;
-  margin: 0px 0px auto;
   margin-top: 2px;
   margin-bottom: 2px;
   text-align: center;

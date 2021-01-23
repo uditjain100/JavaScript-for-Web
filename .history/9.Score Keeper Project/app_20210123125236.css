@@ -55,9 +55,7 @@ img {
 
 #max_score {
   padding: 2px;
-  margin: 0px 0px auto;
-  margin-top: 2px;
-  margin-bottom: 2px;
+  margin: 1px 0px 1px 0px auto;
   text-align: center;
 }
 
