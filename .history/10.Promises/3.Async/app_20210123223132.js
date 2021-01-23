@@ -28,12 +28,8 @@ var changeColor = function () {
   return "rgb(" + rand1 + "," + rand2 + "," + rand3 + ")";
 };
 
-function newPokemon(i, color) {
+function newPokemon(i) {
   var pokemon = document.createElement("div");
-  pokemon.style.backgroundColor = color;
-  pokemon.style.margin = "1px";
-  pokemon.style.border = "1px #003049 solid";
-  pokemon.style.borderRadius = "10%";
   var label = document.createElement("span");
   label.innerText = "#" + i;
   var newi = document.createElement("img");

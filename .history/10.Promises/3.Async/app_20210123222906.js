@@ -8,9 +8,9 @@ var cont = document.querySelector(".container");
 async function pokemon(i) {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
-      newPokemon(i, changeColor());
+      newPokemon(i);
       resolve();
-    }, 100);
+    }, 500);
   });
 }
 
@@ -21,19 +21,9 @@ async function work() {
     });
   }
 }
-var changeColor = function () {
-  rand1 = Math.floor(Math.random() * 256);
-  rand2 = Math.floor(Math.random() * 256);
-  rand3 = Math.floor(Math.random() * 256);
-  return "rgb(" + rand1 + "," + rand2 + "," + rand3 + ")";
-};
 
-function newPokemon(i, color) {
+function newPokemon(i) {
   var pokemon = document.createElement("div");
-  pokemon.style.backgroundColor = color;
-  pokemon.style.margin = "1px";
-  pokemon.style.border = "1px #003049 solid";
-  pokemon.style.borderRadius = "10%";
   var label = document.createElement("span");
   label.innerText = "#" + i;
   var newi = document.createElement("img");
