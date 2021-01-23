@@ -1,8 +1,7 @@
 // firstApproach();
 // secondApproach();
 // thirdApproach();
-// fourthApproach();
-promiseApproach();
+fourthApproach();
 
 // First Approach
 function firstApproach() {
@@ -69,7 +68,6 @@ function promiseApproach() {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
         document.body.style.backgroundColor = newColor;
-        resolve();
       }, delay);
     });
   }
@@ -81,3 +79,5 @@ function promiseApproach() {
     .then(() => delayedColorChange("orange", 1000))
     .then(() => delayedColorChange("red", 1000));
 }
+
+promiseApproach();

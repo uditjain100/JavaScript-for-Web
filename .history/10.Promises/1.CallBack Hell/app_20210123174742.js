@@ -1,8 +1,7 @@
 // firstApproach();
 // secondApproach();
 // thirdApproach();
-// fourthApproach();
-promiseApproach();
+fourthApproach();
 
 // First Approach
 function firstApproach() {
@@ -69,15 +68,7 @@ function promiseApproach() {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
         document.body.style.backgroundColor = newColor;
-        resolve();
       }, delay);
     });
   }
-
-  delayedColorChange("voilet", 1000)
-    .then(() => delayedColorChange("blue", 1000))
-    .then(() => delayedColorChange("green", 1000))
-    .then(() => delayedColorChange("yellow", 1000))
-    .then(() => delayedColorChange("orange", 1000))
-    .then(() => delayedColorChange("red", 1000));
 }
