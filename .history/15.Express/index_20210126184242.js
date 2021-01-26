@@ -8,7 +8,7 @@ const app = express();
 // });
 
 app.listen(3030, () => {
-  console.log("Hey, Here is your request :)");
+  console.log("Hey I am here :)");
 });
 
 app.use("/cats", (req, res) => {

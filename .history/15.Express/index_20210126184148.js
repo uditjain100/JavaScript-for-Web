@@ -8,7 +8,7 @@ const app = express();
 // });
 
 app.listen(3030, () => {
-  console.log("Hey, Here is your request :)");
+  console.log("Hey I am here :)");
 });
 
 app.use("/cats", (req, res) => {
@@ -29,7 +29,7 @@ app.get("/r/:query", (req, res) => {
 });
 
 app.get("/search", (req, res) => {
-  const { q } = req.query;
+  const { q } = res.query;
   res.send("Here is your query : " + q);
 });
 
