@@ -11,7 +11,7 @@ app.get("/r/:domain", (req, res) => {
   const { domain } = req.params;
   const searchData = data[domain];
   if (searchData) res.render("domain.ejs", { ...searchData });
-  else res.render("notfound.ejs", { domain });
+  else res.render("domain.ejs", { ...searchData });
 });
 
 app.get("/rand", (req, res) => {

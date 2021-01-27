@@ -1,17 +1,13 @@
 const express = require("express");
 const app = express();
 const path = require("path");
-const data = require("./views/data.json");
-// console.log(data);
 
 app.set("view-engine", "ejs");
 app.set("views", path.join(__dirname, "/views"));
 
 app.get("/r/:domain", (req, res) => {
   const { domain } = req.params;
-  const searchData = data[domain];
-  if (searchData) res.render("domain.ejs", { ...searchData });
-  else res.render("notfound.ejs", { domain });
+  res.render("domain.ejs", { domain });
 });
 
 app.get("/rand", (req, res) => {

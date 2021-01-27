@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Random</title>
+  </head>
+  <body>
+    <h1>this is your lucky Number : <%= num %></h1>
+    <h3><%= 'Number is : ' + (bool ? 'EVEN' : 'ODD') %></h3>
+    <% if(num % 2 === 0 ) {%>
+    <h1>This Number is Even</h1>
+    <% } else { %>
+    <h1>This Number is Odd</h1>
+    <% } %>
+    <h3><%= 'Number is : ' + (num % 2 === 0 ? 'EVEN' : 'ODD') %></h3>
+  </body>
+</html>

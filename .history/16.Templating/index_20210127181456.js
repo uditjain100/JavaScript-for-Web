@@ -10,8 +10,9 @@ app.set("views", path.join(__dirname, "/views"));
 app.get("/r/:domain", (req, res) => {
   const { domain } = req.params;
   const searchData = data[domain];
-  if (searchData) res.render("domain.ejs", { ...searchData });
-  else res.render("notfound.ejs", { domain });
+  if(searchData)
+  res.render("domain.ejs", { ...searchData });
+  else
 });
 
 app.get("/rand", (req, res) => {
