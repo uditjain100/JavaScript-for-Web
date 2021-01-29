@@ -2,16 +2,15 @@ const express = require("express");
 const app = express();
 
 app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
 
 app.get("/tacos", (req, res) => {
   res.send("GET /tacos response");
 });
 
 app.post("/tacos", (req, res) => {
-  const { author, post } = req.body;
-  console.log(req.body);
-  res.send("Post : " + post + "  and   author : " + author);
+  const { author post} = req.body;
+  res.send("POST /tacos response");
+  res.send("Post : " + post + "  and   " + 'author : ' + author)
 });
 
 app.listen(3000, () => {
