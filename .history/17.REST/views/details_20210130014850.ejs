@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Details</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h2 class="display-2 d-grid col-5 mx-auto" style="text-align: center">
+        Details
+      </h2>
+
+      <div
+        class="row mt-3 mb-3 ms-3 me-3"
+        style="text-align: center; background-color: chartreuse"
+        ;
+      >
+        <h6 class="display-15 d-grid mx-auto" style="text-align: center"></h6>
+        <div class="col-5">
+          <span><%= comment.comment %> </span>
+        </div>
+        <div class="col-5">
+          <span><%= comment.username %> </span>
+        </div>
+        <div class="col-2">
+          <a href="/comment/<%= comment.id %> /update" class="btn btn-primary"
+            >Update</a
+          >
+        </div>
+      </div>
+      <div class="d-grid col-6 mx-auto mt-3">
+        <a href="/comments" class="btn btn-primary">Back</a>
+      </div>
+    </div>
+  </body>
+</html>
