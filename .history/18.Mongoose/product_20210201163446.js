@@ -52,7 +52,7 @@ productSchema.statics.sale = function () {
   return this.updateMany({}, { price: 0 });
 };
 
-// virtuals Getters
+// virtuals
 productSchema.virtual("details").get(function () {
   return "" + this.name + " : " + this.price;
 });

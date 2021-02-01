@@ -52,10 +52,8 @@ productSchema.statics.sale = function () {
   return this.updateMany({}, { price: 0 });
 };
 
-// virtuals Getters
-productSchema.virtual("details").get(function () {
-  return "" + this.name + " : " + this.price;
-});
+// virtuals
+productSchema.virtual("details").get(function () {});
 
 const Product = mongoose.model("Product", productSchema);
 
