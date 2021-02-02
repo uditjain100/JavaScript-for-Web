@@ -25,14 +25,13 @@
         <div class="row m-3 bg-primary" style="text-align: center">
           <div id="pdt_name" class="col-3"><%= product.name %></div>
           <div id="pdt_price" class="col-2"><%= product.price %></div>
-          <div class="col-3">
-            <a
-              href="/products?category=<%= product.category %>"
-              id="pdt_category"
-              class="btn btn-outline-light"
-              ><%= product.category %></a
-            >
-          </div>
+          <a
+            style="color: white"
+            href="/products"
+            id="pdt_category"
+            class="btn col-3"
+            ><%= product.category %></a
+          >
           <div class="col-2">
             <a
               style="color: white; text-decoration: none"

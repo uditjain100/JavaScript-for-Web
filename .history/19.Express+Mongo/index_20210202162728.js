@@ -9,8 +9,6 @@ app.set("view-engine", "ejs");
 app.use(express.urlencoded({ extended: true }));
 app.use(methodoverride("_method"));
 
-const categories = ["fruit", "vegetable", "dairy", "other"];
-
 const mongoose = require("mongoose");
 
 const Product = require("./models/product");
@@ -32,10 +30,10 @@ app.listen(3000, () => {
   console.log("Port 3000 Started Successfully");
 });
 
-// app.get("/products", async (req, res) => {
-//   const pdts = await Product.find({});
-//   res.render("products.ejs", { pdts });
-// });
+app.get("/products", async (req, res) => {
+  const pdts = await Product.find({});
+  res.render("products.ejs", { pdts });
+});
 
 app.get("/products/:id", async (req, res) => {
   const { id } = req.params;
@@ -61,7 +59,7 @@ app.post("/products", async (req, res) => {
 app.get("/products/:id/update", async (req, res) => {
   const { id } = req.params;
   const pdt = await Product.findById(id);
-  res.render("update.ejs", { pdt, categories });
+  res.render("update.ejs", { pdt });
 });
 
 app.patch("/products/:id", async (req, res) => {
@@ -81,15 +79,4 @@ app.delete("/products/:id", async (req, res) => {
   await Product.findByIdAndDelete(id);
   const pdts = await Product.find({});
   res.render("products.ejs", { pdts });
-});
-
-app.get("/products", async (req, res) => {
-  const { category } = req.query;
-  if (category) {
-    const pdts = await Product.find({ category });
-    res.render("categoryList.ejs", { pdts, category });
-  } else {
-    const pdts = await Product.find({});
-    res.render("products.ejs", { pdts });
-  }
 });

@@ -47,9 +47,10 @@
               name="category"
               id="category"
             >
-              <% for(var category of categories) { %>
-              <option value="<%= category %>" <%= pdt.category == category ? 'selected' : ''%> ><%= category %></option>
-              <% } %>
+              <option value="fruit">Fruit</option>
+              <option value="vegetable">Vegetable</option>
+              <option value="dairy">Dairy</option>
+              <option value="other">Other</option>
             </select>
           </div>
           <div class="row">

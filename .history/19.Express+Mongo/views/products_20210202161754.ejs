@@ -25,17 +25,9 @@
         <div class="row m-3 bg-primary" style="text-align: center">
           <div id="pdt_name" class="col-3"><%= product.name %></div>
           <div id="pdt_price" class="col-2"><%= product.price %></div>
-          <div class="col-3">
-            <a
-              href="/products?category=<%= product.category %>"
-              id="pdt_category"
-              class="btn btn-outline-light"
-              ><%= product.category %></a
-            >
-          </div>
+          <div id="pdt_category" class="col-3"><%= product.category %></div>
           <div class="col-2">
             <a
-              style="color: white; text-decoration: none"
               href="/products/<%= product.id %>"
               id="details_btn"
               class="btn btn-outline-dark m-2"
@@ -45,9 +37,9 @@
           <div class="col-2">
             <form
               method="POST"
-              action="/products/<%= product.id %>?_method=DELETE"
+              action="/comment/<%= comment.id %>?_method=DELETE"
             >
-              <button type="submit" class="btn btn-danger m-2">Delete</button>
+              <button type="submit" class="btn btn-danger">Delete</button>
             </form>
           </div>
         </div>

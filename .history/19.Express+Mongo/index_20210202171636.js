@@ -87,7 +87,7 @@ app.get("/products", async (req, res) => {
   const { category } = req.query;
   if (category) {
     const pdts = await Product.find({ category });
-    res.render("categoryList.ejs", { pdts, category });
+    res.render("categoryList.ejs", { category });
   } else {
     const pdts = await Product.find({});
     res.render("products.ejs", { pdts });

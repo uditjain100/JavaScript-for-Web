@@ -48,7 +48,7 @@
               id="category"
             >
               <% for(var category of categories) { %>
-              <option value="<%= category %>" <%= pdt.category == category ? 'selected' : ''%> ><%= category %></option>
+              <option value="<%= category %>" <%= product.category == category ? 'selected' : ''%> ><%= category %></option>
               <% } %>
             </select>
           </div>

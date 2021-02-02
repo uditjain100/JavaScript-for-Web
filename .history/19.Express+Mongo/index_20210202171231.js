@@ -32,10 +32,10 @@ app.listen(3000, () => {
   console.log("Port 3000 Started Successfully");
 });
 
-// app.get("/products", async (req, res) => {
-//   const pdts = await Product.find({});
-//   res.render("products.ejs", { pdts });
-// });
+app.get("/products", async (req, res) => {
+  const pdts = await Product.find({});
+  res.render("products.ejs", { pdts });
+});
 
 app.get("/products/:id", async (req, res) => {
   const { id } = req.params;
@@ -87,9 +87,7 @@ app.get("/products", async (req, res) => {
   const { category } = req.query;
   if (category) {
     const pdts = await Product.find({ category });
-    res.render("categoryList.ejs", { pdts, category });
+    res.render("categoryList.ejs");
   } else {
-    const pdts = await Product.find({});
-    res.render("products.ejs", { pdts });
   }
 });

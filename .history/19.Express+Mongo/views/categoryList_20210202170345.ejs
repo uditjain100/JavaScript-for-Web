@@ -21,7 +21,8 @@
       </h2>
 
       <ul id="list">
-        <% for(var product of pdts) { %>
+        <% for(var product of pdts) { %> <% if (product.category == category) {
+        %> <% } %>
         <div class="row m-3 bg-primary" style="text-align: center">
           <div id="pdt_name" class="col-3"><%= product.name %></div>
           <div id="pdt_price" class="col-2"><%= product.price %></div>
