@@ -70,6 +70,5 @@ app.patch("/products/:id", async (req, res) => {
     price: price,
     category: ("" + category).toLowerCase(),
   });
-  const pdt = await Product.findById(id);
-  res.render("details.ejs", { pdt });
+  res.render("details.ejs");
 });

@@ -23,9 +23,9 @@
       <ul id="list">
         <% for(var product of pdts) { %>
         <div class="row m-3 bg-primary" style="text-align: center">
-          <div id="pdt_name" class="col-3"><%= product.name %></div>
-          <div id="pdt_price" class="col-2"><%= product.price %></div>
-          <div id="pdt_category" class="col-3"><%= product.category %></div>
+          <div id="pdt_name" class="col-3 m-2"><%= product.name %></div>
+          <div id="pdt_price" class="col-2 m-2"><%= product.price %></div>
+          <div id="pdt_category" class="col-3 m-2"><%= product.category %></div>
           <div class="col-2">
             <a
               href="/products/<%= product.id %>"
@@ -40,9 +40,6 @@
         </div>
         <% } %>
       </ul>
-      <div class="d-grid col-4 mx-auto">
-        <a href="/product/add" id="add_btn" class="btn btn-dark">Add Product</a>
-      </div>
     </div>
   </body>
 </html>

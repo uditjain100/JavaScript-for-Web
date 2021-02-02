@@ -7,7 +7,7 @@ app.set("views", path.join(__dirname, "views"));
 app.set("view-engine", "ejs");
 
 app.use(express.urlencoded({ extended: true }));
-app.use(methodoverride("_method"));
+app.use(methodoverride(_method));
 
 const mongoose = require("mongoose");
 
@@ -70,6 +70,5 @@ app.patch("/products/:id", async (req, res) => {
     price: price,
     category: ("" + category).toLowerCase(),
   });
-  const pdt = await Product.findById(id);
-  res.render("details.ejs", { pdt });
+  res.render("details.ejs");
 });

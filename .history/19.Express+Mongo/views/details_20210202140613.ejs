@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= pdt.id %></title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body style="background-color: #003049; color: aliceblue">
+    <div class="container">
+      <h2
+        class="display-3 mx-auto"
+        style="max-width: 400px; text-align: center"
+      >
+        Product
+      </h2>
+
+      <h4
+        class="display-8 mx-auto bg-secondary"
+        style="max-width: 400px; text-align: center"
+      >
+        <%= pdt.id %>
+      </h4>
+
+      <ul id="list">
+        <div class="row m-3 bg-primary" style="text-align: center">
+          <div id="pdt_name" class="col-4"><%= pdt.name %></div>
+          <div id="pdt_price" class="col-2"><%= pdt.price %></div>
+          <div id="pdt_category" class="col-4"><%= pdt.category %></div>
+          <a
+            href="/products/<%= product.id %>/update"
+            id="update_btn"
+            class="btn col-2 btn-outline-dark"
+            >Update</a
+          >
+        </div>
+      </ul>
+    </div>
+  </body>
+</html>
