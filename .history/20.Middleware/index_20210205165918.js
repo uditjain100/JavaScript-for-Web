@@ -48,7 +48,7 @@ app.use((req, res, next) => {
   next();
 });
 
-app.get("/secret", verifyPassword, (req, res) => {
+app.get("/secret", (req, res) => {
   res.send("You are a Moron");
 });
 

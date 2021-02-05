@@ -6,17 +6,9 @@ app.use(morgan("tiny"));
 app.use(morgan("dev"));
 app.use(morgan("common"));
 
-// app.use("/secret", (req, res, next) => {
-//   const { password } = req.query;
-//   if (password === "000000") next();
-//   else res.send("Give the Correct PassWord");
-// });
-
-const verifyPassword = (req, res, next) => {
+app.use("/secret", (req, res, next) => {
   const { password } = req.query;
-  if (password === "000000") next();
-  else res.send("Give the Correct PassWord");
-};
+});
 
 app.use("/dogs", (req, res, next) => {
   console.log("Dogooooooooooo ... !!");
@@ -46,10 +38,6 @@ app.use((req, res, next) => {
 app.use((req, res, next) => {
   console.log("Third Middleware");
   next();
-});
-
-app.get("/secret", verifyPassword, (req, res) => {
-  res.send("You are a Moron");
 });
 
 app.get("/", (req, res) => {
