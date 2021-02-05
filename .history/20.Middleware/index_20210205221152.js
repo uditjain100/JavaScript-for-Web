@@ -49,11 +49,7 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use((err, req, res, next) => {
-  console.log("****************************************");
-  console.log("********************ERROR***************");
-  console.log("****************************************");
-});
+app.use((err, req, res, next) => {});
 
 app.get("/error", (req, res) => {
   chicken.fly();

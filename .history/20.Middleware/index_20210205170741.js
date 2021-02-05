@@ -6,7 +6,7 @@ app.use(morgan("tiny"));
 app.use(morgan("dev"));
 app.use(morgan("common"));
 
-// app.use("/secret", (req, res, next) => {
+// TODO : app.use("/secret", (req, res, next) => {
 //   const { password } = req.query;
 //   if (password === "000000") next();
 //   else res.send("Give the Correct PassWord");
@@ -15,8 +15,7 @@ app.use(morgan("common"));
 const verifyPassword = (req, res, next) => {
   const { password } = req.query;
   if (password === "000000") next();
-  else throw new Error("Incorrect PassWord");
-  // res.send("Give the Correct PassWord");
+  else res.send("Give the Correct PassWord");
 };
 
 app.use("/dogs", (req, res, next) => {
@@ -47,16 +46,6 @@ app.use((req, res, next) => {
 app.use((req, res, next) => {
   console.log("Third Middleware");
   next();
-});
-
-app.use((err, req, res, next) => {
-  console.log("****************************************");
-  console.log("********************ERROR***************");
-  console.log("****************************************");
-});
-
-app.get("/error", (req, res) => {
-  chicken.fly();
 });
 
 app.get("/secret", verifyPassword, (req, res) => {
