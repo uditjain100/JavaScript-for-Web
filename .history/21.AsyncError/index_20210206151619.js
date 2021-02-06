@@ -104,9 +104,8 @@ app.delete(
   })
 );
 
-app.get(
-  "/products",
-  wrapAsync(async (req, res, next) => {
+app.get("/products", async (req, res, next) => {
+  try {
     const { category } = req.query;
     if (category) {
       const pdts = await Product.find({ category });
@@ -115,17 +114,11 @@ app.get(
       const pdts = await Product.find({});
       res.render("products.ejs", { pdts });
     }
-  })
-);
-
-const handleValidationError = (err) => new AppError(400, "Validation Failed");
-
-app.use((err, req, res, next) => {
-  if (err.name === "ValidationError") err = handleValidationError(err);
-  next(err);
+  } catch (e) {
+    next(e);
+  }
 });
 
-// Error Handling Middleware
 app.use((err, req, res, next) => {
   const { status = 500, message = "Something went Wrong" } = err;
   res.status(status).send(message);

@@ -79,9 +79,8 @@ app.get(
   })
 );
 
-app.patch(
-  "/products/:id",
-  wrapAsync(async (req, res, next) => {
+app.patch("/products/:id", async (req, res, next) => {
+  try {
     const { id } = req.params;
     const { name, price, category } = req.body;
     await Product.findByIdAndUpdate(id, {
@@ -91,22 +90,24 @@ app.patch(
     });
     const pdt = await Product.findById(id);
     res.render("details.ejs", { pdt });
-  })
-);
+  } catch (e) {
+    next(e);
+  }
+});
 
-app.delete(
-  "/products/:id",
-  wrapAsync(async (req, res, next) => {
+app.delete("/products/:id", async (req, res, next) => {
+  try {
     const { id } = req.params;
     await Product.findByIdAndDelete(id);
     const pdts = await Product.find({});
     res.render("products.ejs", { pdts });
-  })
-);
+  } catch (e) {
+    next(e);
+  }
+});
 
-app.get(
-  "/products",
-  wrapAsync(async (req, res, next) => {
+app.get("/products", async (req, res, next) => {
+  try {
     const { category } = req.query;
     if (category) {
       const pdts = await Product.find({ category });
@@ -115,17 +116,11 @@ app.get(
       const pdts = await Product.find({});
       res.render("products.ejs", { pdts });
     }
-  })
-);
-
-const handleValidationError = (err) => new AppError(400, "Validation Failed");
-
-app.use((err, req, res, next) => {
-  if (err.name === "ValidationError") err = handleValidationError(err);
-  next(err);
+  } catch (e) {
+    next(e);
+  }
 });
 
-// Error Handling Middleware
 app.use((err, req, res, next) => {
   const { status = 500, message = "Something went Wrong" } = err;
   res.status(status).send(message);

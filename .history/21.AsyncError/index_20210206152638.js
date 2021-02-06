@@ -125,7 +125,6 @@ app.use((err, req, res, next) => {
   next(err);
 });
 
-// Error Handling Middleware
 app.use((err, req, res, next) => {
   const { status = 500, message = "Something went Wrong" } = err;
   res.status(status).send(message);

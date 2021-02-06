@@ -118,14 +118,15 @@ app.get(
   })
 );
 
-const handleValidationError = (err) => new AppError(400, "Validation Failed");
+const handleValidationError = (err) => {
+  return new AppError(400, "Validation Failed");
+};
 
 app.use((err, req, res, next) => {
   if (err.name === "ValidationError") err = handleValidationError(err);
   next(err);
 });
 
-// Error Handling Middleware
 app.use((err, req, res, next) => {
   const { status = 500, message = "Something went Wrong" } = err;
   res.status(status).send(message);
