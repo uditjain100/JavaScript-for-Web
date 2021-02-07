@@ -69,9 +69,10 @@ const addProductIntoFarms = async (id) => {
 
 // addProductIntoFarms("601fb1c4bb1c362030e51184");
 
-var getProductsFromFarm = async (id) => {
-  const f = await Farm.findById(id).populate("products");
-  for (var p of f.products) console.log(p);
-};
-
-getProductsFromFarm("601fb1c4bb1c362030e51184");
+var getProductsFromFarm = async (id) {
+    const f = await Farm.findById(id);
+    for(var p of f.products){
+        const p = await Product.findById(p.ObjectId);
+        console.log(p)
+    }  
+}
