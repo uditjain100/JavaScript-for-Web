@@ -22,10 +22,8 @@ const farmSchema = mongoose.Schema({
 });
 
 farmSchema.post("findOneAndDelete", async function (farm) {
-  console.log(farm);
   if (farm.products.length) {
-    const res = await Product.deleteMany({ _id: { $in: farm.products } });
-    console.log(res);
+    await Product.deleteMany({ _id: { $in: farm.products } });
   }
 });
 

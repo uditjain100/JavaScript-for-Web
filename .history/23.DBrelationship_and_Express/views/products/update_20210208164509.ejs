@@ -16,7 +16,7 @@
       <h2 class="display-4 d-grid col-5 mx-auto" style="text-align: center">
         Update Product
       </h2>
-      <form action="/farms/<%= farm.id %>/products/<%= pdt.id %>?_method=PATCH" method="POST">
+      <form action="/products/<%= pdt.id %>?_method=PATCH" method="POST">
         <div class="row">
           <div class="form-group col-4">
             <label for="name">Product Name</label>
@@ -59,7 +59,7 @@
           </div>
           <div class="row">
             <div class="d-grid col-4 mx-auto mt-3">
-              <a href="/farms/<%= farm.id %>" class="btn btn-danger"
+              <a href="/farms/<%= farm.id %>" class="btn btn-primary"
                 >Cancel</a
               >
             </div>

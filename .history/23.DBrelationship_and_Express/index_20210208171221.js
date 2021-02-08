@@ -70,8 +70,10 @@ app.patch("/farms/:id", async (req, res) => {
 //TODO:
 
 app.delete("/farms/:id", async (req, res) => {
-  const farm = await Farm.findByIdAndDelete(req.params.id);
-  res.redirect("/farms");
+  const { id } = req.params;
+  await Farm.findByIdAndDelete(id);
+  const farms = await Farm.find({});
+  res.render("./farms/farms.ejs", { farms });
 });
 
 //Products Routes

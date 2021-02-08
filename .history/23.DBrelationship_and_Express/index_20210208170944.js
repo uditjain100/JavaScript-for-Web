@@ -45,8 +45,13 @@ app.post("/farms", async (req, res) => {
 
 app.get("/farms/:id", async (req, res) => {
   const { id } = req.params;
-  const farm = await Farm.findById(id).populate("products");
-  res.render("./farms/details.ejs", { farm });
+  const farm = await Farm.findById(id);
+  var products = new Array();
+  for (var product of farm.products) {
+    var p = await Product.findById(product._id);
+    products.push(p);
+  }
+  res.render("./farms/details.ejs", { farm, products });
 });
 
 app.get("/farm/:id/update", async (req, res) => {
@@ -70,8 +75,10 @@ app.patch("/farms/:id", async (req, res) => {
 //TODO:
 
 app.delete("/farms/:id", async (req, res) => {
-  const farm = await Farm.findByIdAndDelete(req.params.id);
-  res.redirect("/farms");
+  const { id } = req.params;
+  await Farm.findByIdAndDelete(id);
+  const farms = await Farm.find({});
+  res.render("./farms/farms.ejs", { farms });
 });
 
 //Products Routes

@@ -45,8 +45,13 @@ app.post("/farms", async (req, res) => {
 
 app.get("/farms/:id", async (req, res) => {
   const { id } = req.params;
-  const farm = await Farm.findById(id).populate("products");
-  res.render("./farms/details.ejs", { farm });
+  const farm = await Farm.findById(id);
+  var products = new Array();
+  for (var product of farm.products) {
+    var p = await Product.findById(product._id);
+    products.push(p);
+  }
+  res.render("./farms/details.ejs", { farm, products });
 });
 
 app.get("/farm/:id/update", async (req, res) => {
@@ -70,16 +75,21 @@ app.patch("/farms/:id", async (req, res) => {
 //TODO:
 
 app.delete("/farms/:id", async (req, res) => {
-  const farm = await Farm.findByIdAndDelete(req.params.id);
-  res.redirect("/farms");
+  const { id } = req.params;
+  await Farm.findByIdAndDelete(id);
+  const farms = await Farm.find({});
+  res.render("./farms/farms.ejs", { farms });
 });
-
-//Products Routes
 
 app.get("/farm/:id/products", async (req, res) => {
   const { id } = req.params;
-  const farm = await Farm.findById(id).populate("products");
-  res.render("./products/products.ejs", { farm });
+  const farm = await Farm.findById(id);
+  var products = new Array();
+  for (var product of farm.products) {
+    var p = await Product.findById(product._id);
+    products.push(p);
+  }
+  res.render("./products/products.ejs", { products, farm });
 });
 
 app.get("/farms/:id/product/add", async (req, res) => {
@@ -90,7 +100,7 @@ app.get("/farms/:id/product/add", async (req, res) => {
 
 app.post("/farms/:id/products", async (req, res) => {
   const { id } = req.params;
-  var farm = await Farm.findById(id);
+  const farm = await Farm.findById(id);
   const { name, price, category } = req.body;
   var p = new Product({
     name: name,
@@ -101,8 +111,12 @@ app.post("/farms/:id/products", async (req, res) => {
   farm.products.push(p);
   await farm.save();
   await p.save();
-  farm = await Farm.findById(id).populate("products");
-  res.render("./farms/details.ejs", { farm });
+  var products = new Array();
+  for (var product of farm.products) {
+    p = await Product.findById(product._id);
+    products.push(p);
+  }
+  res.render("./farms/details.ejs", { products, farm });
 });
 
 app.get("/farms/:farm_id/products/:id", async (req, res) => {

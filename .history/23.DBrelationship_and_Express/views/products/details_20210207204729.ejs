@@ -33,7 +33,7 @@
           <div id="pdt_price" class="col-2"><%= pdt.price %></div>
           <div id="pdt_category" class="col-4"><%= pdt.category %></div>
           <a
-            href="/farms/<%= farm.id %>/products/<%= pdt.id %>/update"
+            href="/products/<%= pdt.id %>/update"
             id="update_btn"
             class="btn col-2 btn-outline-dark"
             >Update</a
@@ -41,9 +41,7 @@
         </div>
       </ul>
       <div class="d-grid col-4 mx-auto">
-        <a href="/farms/<%= farm.id %>" id="back_btn" class="btn btn-dark"
-          >Back</a
-        >
+        <a href="/products" id="back_btn" class="btn btn-dark">Back To List</a>
       </div>
     </div>
   </body>
