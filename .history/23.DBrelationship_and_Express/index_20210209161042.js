@@ -69,10 +69,10 @@ app.patch("/farms/:id", async (req, res) => {
 
 //TODO:
 
-app.delete("/farms/:id", async (req, res) => {
-  await Farm.findByIdAndDelete(req.params.id);
-  res.redirect("/farms");
-});
+// app.delete("/farms/:id", async (req, res) => {
+//   const farm = await Farm.findByIdAndDelete(req.params.id);
+//   res.redirect("/farms");
+// });
 
 //Products Routes
 
@@ -132,7 +132,10 @@ app.patch("/farms/:farm_id/products/:id", async (req, res) => {
   res.render("./products/details.ejs", { pdt, farm });
 });
 
+//TODO:
+
 app.delete("/farms/:farm_id/products/:id", async (req, res) => {
+  console.log("**********************");
   const { id, farm_id } = req.params;
   await Farm.findByIdAndUpdate(farm_id, { $pull: { products: id } });
   await Product.findByIdAndDelete(id);

@@ -70,7 +70,7 @@ app.patch("/farms/:id", async (req, res) => {
 //TODO:
 
 app.delete("/farms/:id", async (req, res) => {
-  await Farm.findByIdAndDelete(req.params.id);
+  const farm = await Farm.findByIdAndDelete(req.params.id);
   res.redirect("/farms");
 });
 
