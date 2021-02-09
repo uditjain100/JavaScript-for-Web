@@ -1,0 +1,21 @@
+const express = require("express");
+const router = express.Router();
+
+router.use((req, res, next) => {
+  if (req.query.isAdmin) next();
+  else res.send("You Fucked Up :)");
+});
+
+router.get("/", (req, res) => {
+  res.send("Heyyyyyyyyyyyy user ... !!");
+});
+
+router.post("/", (req, res) => {
+  res.send("Heyyyyyyyyyyyy user posted ... !! ");
+});
+
+router.get("/:id", (req, res) => {
+  res.send("Heyyyyyyyyyyyy unique user ... !!");
+});
+
+module.exports = router;
