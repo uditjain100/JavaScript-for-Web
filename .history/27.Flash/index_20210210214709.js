@@ -20,13 +20,9 @@ const sessionOptions = {
 
 app.use(express.urlencoded({ extended: true }));
 app.use(methodoverride("_method"));
-app.use(session(sessionOptions));
 app.use(flash());
 
-app.use((req, res, next) => {
-  res.locals.messages = req.flash("success");
-  next();
-});
+app.use(session(sessionOptions));
 
 const categories = ["fruit", "vegetable", "dairy", "other"];
 

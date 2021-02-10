@@ -20,13 +20,9 @@ const sessionOptions = {
 
 app.use(express.urlencoded({ extended: true }));
 app.use(methodoverride("_method"));
-app.use(session(sessionOptions));
 app.use(flash());
 
-app.use((req, res, next) => {
-  res.locals.messages = req.flash("success");
-  next();
-});
+app.use(session(sessionOptions));
 
 const categories = ["fruit", "vegetable", "dairy", "other"];
 
@@ -45,7 +41,7 @@ mongoose
 
 app.get("/farms", async (req, res) => {
   const farms = await Farm.find({});
-  res.render("./farms/farms.ejs", { farms });
+  res.render("./farms/farms.ejs", { farms, message: req.flash("success") });
 });
 
 app.get("/farm/add", async (req, res) => {

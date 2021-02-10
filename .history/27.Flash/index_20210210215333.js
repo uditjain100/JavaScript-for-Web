@@ -24,7 +24,7 @@ app.use(session(sessionOptions));
 app.use(flash());
 
 app.use((req, res, next) => {
-  res.locals.messages = req.flash("success");
+  res.locals.message = req.flash("success");
   next();
 });
 
@@ -45,7 +45,7 @@ mongoose
 
 app.get("/farms", async (req, res) => {
   const farms = await Farm.find({});
-  res.render("./farms/farms.ejs", { farms });
+  res.render("./farms/farms.ejs", { farms, message: req.flash("success") });
 });
 
 app.get("/farm/add", async (req, res) => {

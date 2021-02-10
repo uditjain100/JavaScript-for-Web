@@ -20,13 +20,9 @@ const sessionOptions = {
 
 app.use(express.urlencoded({ extended: true }));
 app.use(methodoverride("_method"));
-app.use(session(sessionOptions));
 app.use(flash());
 
-app.use((req, res, next) => {
-  res.locals.messages = req.flash("success");
-  next();
-});
+app.use(session(sessionOptions));
 
 const categories = ["fruit", "vegetable", "dairy", "other"];
 
@@ -55,7 +51,6 @@ app.get("/farm/add", async (req, res) => {
 app.post("/farms", async (req, res) => {
   const f = new Farm(req.body);
   await f.save();
-  req.flash("success", "Successfully Registred");
   res.redirect("/farms");
 });
 

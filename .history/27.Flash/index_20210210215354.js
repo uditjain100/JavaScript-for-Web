@@ -24,7 +24,7 @@ app.use(session(sessionOptions));
 app.use(flash());
 
 app.use((req, res, next) => {
-  res.locals.messages = req.flash("success");
+  res.locals.message = req.flash("success");
   next();
 });
 
